@@ -6,22 +6,23 @@ import List from './components/List/List';
 
 function App() {
 
+  const [action, setAction] = useState('add');
+  const [editItem, setEditItem] = useState({});
+
+
+
 
   const [data, setData] = useState([
-    // {
-    //   id: 1,
-    //   naziv: "mleko",
-    // },
-    // {
-    //   id: 2,
-    //   naziv: 'jaja',
-    // },
-    // {
-    //   id: 3,
-    //   naziv: 'kafa',
-    // },
-  ]);
+    {
+      id: 1,
+      name: "mleko",
+    },
+    {
+      id: 2,
+      name: 'jaja',
+    },
 
+  ]);
 
   return (
     <div className="app">
@@ -30,8 +31,16 @@ function App() {
         <span><p>{data.length}</p></span>
       </div>
 
-      <Form data={data} setData={setData} />
-      <List data={data} setData={setData} />
+      <Form
+        data={data} setData={setData}
+        action={action} setAction={setAction}
+        editItem={editItem} setEditItem={setEditItem} />
+
+      <List
+        data={data} setData={setData}
+        action={action} setAction={setAction}
+        editItem={editItem} setEditItem={setEditItem} />
+
     </div>
   );
 }

@@ -2,10 +2,12 @@
   --bgInfo: rgb(59, 159, 218);
   --bgSuccess: rgb(0, 212, 142);
   --bgDanger: rgb(255, 86, 86);
+  --bgEdit: rgb(253, 186, 62);
 
   --bgInfoHover: rgb(51, 139, 190);
   --bgSuccessHover: rgb(0, 199, 133);
   --bgDangerHover: rgb(255, 29, 29);
+  --bgEditHover: rgb(255, 177, 32);
 
   --bg: rgb(240, 243, 252);
   --bgApp: rgb(250, 250, 250);
@@ -42,10 +44,7 @@ code {
     monospace;
 }
 
-li {
-  list-style: none;
-}
-
+/* Utility */
 .bg-success {
   background-color: var(--bgSuccess);
 }
@@ -54,12 +53,35 @@ li {
   background-color: var(--bgInfo);
 }
 
+.bg-danger {
+  background-color: var(--bgDanger);
+}
+
+.bg-edit {
+  background-color: var(--bgEdit);
+}
+
 .bg-success:hover {
   background-color: var(--bgSuccessHover);
 }
 
 .bg-info:hover {
   background-color: var(--bgInfoHover);
+}
+
+.bg-danger:hover {
+  background-color: var(--bgDangerHover);
+}
+
+.bg-edit:hover {
+  background-color: var(--bgEditHover);
+}
+
+/* Utility */
+
+
+li {
+  list-style: none;
 }
 
 .app {
@@ -103,4 +125,6 @@ li {
 .app .header span p {
   /* text-align: center; */
   margin-bottom: 1px;
+  font-size: 12px;
+  font-weight: 600;
 }

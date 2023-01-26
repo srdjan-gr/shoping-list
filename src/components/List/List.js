@@ -1,7 +1,7 @@
 import React from 'react'
 import './List.css'
 
-const List = ({ data, setData }) => {
+const List = ({ data, setData, action, setAction, editItem, setEditItem }) => {
 
 
     const deleteItem = (idx) => {
@@ -11,6 +11,11 @@ const List = ({ data, setData }) => {
         setData([...tempData]);
     }
 
+    const editParams = (item) => {
+        // setEditItem('')
+        setAction('edit')
+        setEditItem(item)
+    }
 
     return (
         <div className='list'>
@@ -21,7 +26,7 @@ const List = ({ data, setData }) => {
                         data.map((item, idx) => {
                             return (
                                 <span key={item.id}>
-                                    <li>{item.id}. {item.naziv}</li>
+                                    <li onClick={() => editParams(item)}>{item.id}. {item.name}</li>
                                     <button onClick={() => deleteItem(idx)}>X</button>
                                 </span>
                             )

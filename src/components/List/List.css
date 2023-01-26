@@ -25,7 +25,7 @@
 }
 
 .list li {
-    /* color: rgb(75, 75, 75); */
+    width: 90%;
     color: rgb(110, 110, 110);
 }
 
