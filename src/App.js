@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Form from './components/Form/Form';
 import List from './components/List/List';
+import Pagination from './components/Pagination/Pagination';
 
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
   const [action, setAction] = useState('add');
   const [editItem, setEditItem] = useState({});
 
-
+  const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(10);
 
 
   const [data, setData] = useState([
@@ -40,6 +42,8 @@ function App() {
         data={data} setData={setData}
         action={action} setAction={setAction}
         editItem={editItem} setEditItem={setEditItem} />
+
+      <Pagination />
 
     </div>
   );

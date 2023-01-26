@@ -1,0 +1,31 @@
+article {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+article span {
+    width: 30px;
+    height: 30px;
+    background-color: var(--bgApp);
+    border: 1px solid rgb(223, 223, 223);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+article span:first-child {
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}
+
+article span:last-child {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
