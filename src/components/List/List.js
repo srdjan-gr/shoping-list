@@ -1,4 +1,5 @@
 import React from 'react'
+import { RiCloseCircleFill } from 'react-icons/ri'
 import './List.css'
 
 const List = ({ data, setData, action, setAction, editItem, setEditItem }) => {
@@ -27,7 +28,7 @@ const List = ({ data, setData, action, setAction, editItem, setEditItem }) => {
                             return (
                                 <span key={item.id}>
                                     <li onClick={() => editParams(item)}>{item.id}. {item.name}</li>
-                                    <button onClick={() => deleteItem(idx)}>X</button>
+                                    <RiCloseCircleFill className='icon-main' onClick={() => deleteItem(idx)} />
                                 </span>
                             )
                         })

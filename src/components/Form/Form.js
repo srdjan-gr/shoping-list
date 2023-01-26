@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useState } from 'react'
 import './Form.css'
+import { RiCloseLine } from 'react-icons/ri'
 
 const Form = ({ data, setData, action, setAction, editItem, setEditItem }) => {
 
@@ -79,7 +80,7 @@ const Form = ({ data, setData, action, setAction, editItem, setEditItem }) => {
                     <form onSubmit={edit}>
                         <input type="text" defaultValue={nazivEdit} placeholder={editItem.name} onChange={(e) => setNazivEdit(e.target.value)} ref={valueRef} />
                         <button className='bg-edit'>Edit</button>
-                        <button className='bg-danger' onClick={cancelEdit}>X</button>
+                        <button className='bg-danger' onClick={cancelEdit}><RiCloseLine className='icon-second' /></button>
                     </form>
                 )
             }

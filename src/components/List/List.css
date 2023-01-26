@@ -29,16 +29,6 @@
     color: rgb(110, 110, 110);
 }
 
-.list span button {
-    border: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    color: #fff;
-    background-color: var(--bgDanger);
-}
-
 .list span button:hover {
     background-color: var(--bgDangerHover);
 }

@@ -77,6 +77,17 @@ code {
   background-color: var(--bgEditHover);
 }
 
+.icon-main {
+  color: var(--bgDanger);
+  font-size: 20px;
+}
+
+.icon-second {
+  font-size: 22px;
+  text-align: center;
+  margin-top: 2px;
+}
+
 /* Utility */
 
 
