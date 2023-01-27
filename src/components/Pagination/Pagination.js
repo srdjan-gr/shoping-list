@@ -2,12 +2,32 @@ import React from 'react'
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import './Pagination.css'
 
-const Pagination = () => {
+const Pagination = ({ currentPage, setCurrentPage }) => {
+
+
+    const forwardPage = () => {
+        setCurrentPage(currentPage + 1)
+    }
+
+
+    const backwardPage = () => {
+        if (currentPage != 1) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+
+
     return (
         <article>
-            <span><RiArrowLeftSLine /></span>
-            <span>1</span>
-            <span><RiArrowRightSLine /></span>
+            {
+                currentPage != 1 ? (
+                    <span className='pagination' onClick={backwardPage} ><RiArrowLeftSLine /></span>
+                ) : (
+                    <span></span>
+                )
+            }
+            <span>{currentPage}</span>
+            <span className='pagination' onClick={forwardPage}><RiArrowRightSLine /></span>
         </article>
     )
 }
