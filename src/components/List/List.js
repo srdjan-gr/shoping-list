@@ -2,18 +2,17 @@ import React from 'react'
 import { RiCloseCircleFill } from 'react-icons/ri'
 import './List.css'
 
-const List = ({ data, setData, action, setAction, editItem, setEditItem }) => {
+const List = ({ recordList, setrecordList, action, setAction, editItem, setEditItem }) => {
 
 
     const deleteItem = (idx) => {
 
-        let tempData = [...data];
+        let tempData = [...recordList];
         tempData.splice(idx, 1);
-        setData([...tempData]);
+        setrecordList([...tempData]);
     }
 
     const editParams = (item) => {
-        // setEditItem('')
         setAction('edit')
         setEditItem(item)
     }
@@ -22,9 +21,9 @@ const List = ({ data, setData, action, setAction, editItem, setEditItem }) => {
         <div className='list'>
             <ul>
                 {
-                    data.length != 0 ? (
+                    recordList.length != 0 ? (
 
-                        data.map((item, idx) => {
+                        recordList.map((item, idx) => {
                             return (
                                 <span key={item.id}>
                                     <li onClick={() => editParams(item)}>{item.id}. {item.name}</li>

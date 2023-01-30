@@ -4,6 +4,7 @@ article {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px;
     /* width: 100px; */
     border-radius: 10px;
     margin-top: 10px;
@@ -21,9 +22,11 @@ article span {
     font-size: 18px;
     font-weight: 500;
     transition: var(--transition);
+    cursor: pointer;
+
 }
 
-article span:first-child {
+/* article span:first-child {
     border-radius: 5px 0 0 5px;
     cursor: pointer;
     margin-right: 2px;
@@ -33,9 +36,14 @@ article span:last-child {
     border-radius: 0 5px 5px 0;
     cursor: pointer;
     margin-left: 2px;
-}
+} */
 
 .pagination:hover {
+    background-color: var(--bgSuccessHover);
+    color: var(--textLight);
+}
+
+.activePage {
     background-color: var(--bgSuccessHover);
     color: var(--textLight);
 }

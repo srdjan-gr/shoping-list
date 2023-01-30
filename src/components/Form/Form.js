@@ -1,32 +1,33 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useState } from 'react'
 import './Form.css'
-import { RiCloseLine } from 'react-icons/ri'
 
-const Form = ({ data, setData, action, setAction, editItem, setEditItem }) => {
+const Form = ({ recordList, setrecordList, action, setAction, editItem, setEditItem }) => {
 
     const { name, id } = editItem
     const [naziv, setNaziv] = useState('');
     const [nazivEdit, setNazivEdit] = useState('')
     const valueRef = useRef();
 
-
+    useEffect(() => {
+        setNazivEdit(name)
+    }, [])
 
 
     // Add item to list
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (naziv != '') {
+        if (naziv !== '') {
 
-            const newId = data.length + 1;
+            const newId = recordList.length + 1;
 
             const newData = {
                 id: newId,
                 name: naziv,
             }
 
-            setData([...data, newData]);
+            setrecordList([...recordList, newData]);
             setNaziv('');
             valueRef.current.value = '';
         } else {
@@ -38,23 +39,19 @@ const Form = ({ data, setData, action, setAction, editItem, setEditItem }) => {
     // Edit list Item
     const edit = (e) => {
         e.preventDefault();
-        // const newData = data.map((item) => (
-        //     item.id == id ? { ...item, name: nazivEdit } : item
-        // ))
 
-        const newData = data.map((item) => {
-            if (item.id == id) {
+        const newData = recordList.map((item) => {
+            if (item.id === id) {
                 return { ...item, name: nazivEdit }
             } else {
                 return item
             }
         })
 
-        setData(newData)
+        setrecordList(newData)
 
         setAction('add');
         setEditItem({});
-        // setNazivEdit('');
         setNaziv('');
 
         valueRef.current.value = '';
@@ -71,16 +68,16 @@ const Form = ({ data, setData, action, setAction, editItem, setEditItem }) => {
     return (
         <>
             {
-                action == 'add' ? (
+                action === 'add' ? (
                     <form onSubmit={handleSubmit}>
                         <input type="text" defaultValue={naziv} onChange={(e) => setNaziv(e.target.value)} ref={valueRef} />
                         <button className='bg-success'>Add</button>
                     </form>
                 ) : (
                     <form onSubmit={edit}>
-                        <input type="text" defaultValue={nazivEdit} placeholder={editItem.name} onChange={(e) => setNazivEdit(e.target.value)} ref={valueRef} />
+                        <input type="text" placeholder={editItem.name} onChange={(e) => setNazivEdit(e.target.value)} ref={valueRef} />
                         <button className='bg-edit'>Edit</button>
-                        <button className='bg-danger' onClick={cancelEdit}><RiCloseLine className='icon-second' /></button>
+                        <button className='bg-danger' onClick={cancelEdit}>X</button>
                     </form>
                 )
             }
