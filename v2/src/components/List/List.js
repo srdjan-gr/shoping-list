@@ -1,5 +1,5 @@
 import React from 'react'
-import { RiCloseCircleFill } from 'react-icons/ri'
+import { RiCloseCircleFill, RiEditBoxLine } from 'react-icons/ri'
 import './List.css'
 
 const List = ({ editItem, setEditItem, recordList, setrecordList }) => {
@@ -31,23 +31,26 @@ const List = ({ editItem, setEditItem, recordList, setrecordList }) => {
                     <table>
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>Id </th>
                                 <th>Name</th>
                                 <th>Comment</th>
                                 <th>Qty</th>
-                                <th></th>
+                                <th>Opt</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody >
                             {
                                 recordList.map((item, idx) => {
                                     return (
-                                        <tr key={item.id} onClick={() => editParams(item)}>
-                                            <td>{item.id}</td>
+                                        <tr key={item.id} >
+                                            <td>{item.id}.</td>
                                             <td>{item.name}</td>
                                             <td>{item.comment}</td>
                                             <td>{item.qty}</td>
-                                            <td> <RiCloseCircleFill className='icon-main' onClick={() => deleteItem(idx)} /></td>
+                                            <td>
+                                                <RiEditBoxLine className='icon-main-edit' onClick={() => editParams(item)} />
+                                                <RiCloseCircleFill className='icon-main-danger' onClick={() => deleteItem(idx)} />
+                                            </td>
                                         </tr>
                                     )
                                 })
@@ -57,7 +60,7 @@ const List = ({ editItem, setEditItem, recordList, setrecordList }) => {
                 )
                     : (<li>Your shopping list is empty.</li>)
             }
-        </div>
+        </div >
     )
 }
 

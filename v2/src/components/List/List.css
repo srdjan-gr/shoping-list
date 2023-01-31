@@ -3,7 +3,7 @@
     height: 100%;
     margin-bottom: 10px;
     border-radius: 12px;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     /* border: 1px solid rgb(223, 223, 223); */
     overflow-y: scroll;
@@ -28,6 +28,10 @@
     text-align: start;
 }
 
+.list table th:last-child {
+    text-align: center;
+}
+
 tbody:before {
     content: "";
     display: block;
@@ -37,8 +41,15 @@ tbody:before {
 .list table tr {
     color: var(--text);
     border-bottom: 1px solid rgb(214, 214, 214);
-    z-index: 5;
-    position: relative;
+
+}
+
+.list table tr td:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 30px;
 }
 
 .list tr:hover {

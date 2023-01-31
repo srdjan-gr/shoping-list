@@ -90,11 +90,14 @@ code {
   background-color: var(--bgEditHover);
 }
 
-.icon-main {
+.icon-main-danger {
   color: var(--bgDanger);
   font-size: 20px;
-  z-index: 10;
-  position: relative;
+}
+
+.icon-main-edit {
+  color: var(--bgEdit);
+  font-size: 20px;
 }
 
 .icon-second {

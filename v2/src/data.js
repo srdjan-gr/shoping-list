@@ -8,7 +8,7 @@ const data = [
     {
         "id": 2,
         "name": "Avokado",
-        "comment": "Regular",
+        "comment": "",
         "qty": 2,
     },
     {

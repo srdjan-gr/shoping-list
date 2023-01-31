@@ -34,7 +34,7 @@ function App() {
     <div className="app">
       <div className='header'>
         <h1>Shopping list</h1>
-        <span><p>{data.length}</p></span>
+        <span><p>{recordList.length}</p></span>
       </div>
 
       {
