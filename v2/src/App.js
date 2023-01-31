@@ -11,7 +11,14 @@ import Edit from './components/Form/Edit';
 function App() {
 
   const [data, setData] = useState(myData);
-  const [editItem, setEditItem] = useState({});
+  const [editItem, setEditItem] = useState({
+    edit: false,
+    id: '',
+    name: '',
+    comment: '',
+    qty: '',
+  });
+
 
   // Pagination data
   const [currentPage, setCurrentPage] = useState(1);
@@ -19,23 +26,30 @@ function App() {
 
   const indexOfLastRecord = currentPage * perPage;
   const indexOfFirstRecord = indexOfLastRecord - perPage;
-  const [recordList, setrecordList] = useState(data.slice(indexOfFirstRecord, indexOfLastRecord));
+  // const [recordList, setrecordList] = useState(data.slice(indexOfFirstRecord, indexOfLastRecord));
+  const [recordList, setrecordList] = useState(data);
 
 
   return (
     <div className="app">
       <div className='header'>
         <h1>Shopping list</h1>
-        <span><p>{0}</p></span>
+        <span><p>{data.length}</p></span>
       </div>
 
-      <Add
-        editItem={editItem} setEditItem={setEditItem}
-      />
+      {
+        editItem.edit == false ?
 
-      <Edit
-        editItem={editItem} setEditItem={setEditItem}
-      />
+          <Add
+            editItem={editItem} setEditItem={setEditItem}
+            recordList={recordList} setrecordList={setrecordList}
+          />
+          :
+          <Edit
+            editItem={editItem} setEditItem={setEditItem}
+            recordList={recordList} setrecordList={setrecordList}
+          />
+      }
 
       <List
         editItem={editItem} setEditItem={setEditItem}

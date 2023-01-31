@@ -1,35 +1,47 @@
 .list {
-    width: 300px;
+    width: 350px;
     height: 100%;
     margin-bottom: 10px;
     border-radius: 12px;
     padding: 15px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-    /* overflow-y: scroll; */
-}
-
-.list span {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid rgb(214, 214, 214);
-    color: rgb(75, 75, 75);
-    width: 100%;
-    transition: all .15s ease-out;
-}
-
-.list span:hover {
-    background-color: rgb(231, 231, 231);
-    cursor: pointer;
+    /* border: 1px solid rgb(223, 223, 223); */
+    overflow-y: scroll;
 }
 
 .list li {
-    width: 90%;
-    color: rgb(110, 110, 110);
+    color: var(--text);
 }
 
-.list span button:hover {
-    background-color: var(--bgDangerHover);
+
+/* Table */
+.list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list table th {
+    color: var(--text);
+    font-weight: 400;
+    border-bottom: 2px solid rgb(214, 214, 214);
+    padding-bottom: 3px;
+    text-align: start;
+}
+
+tbody:before {
+    content: "";
+    display: block;
+    height: 5px;
+}
+
+.list table tr {
+    color: var(--text);
+    border-bottom: 1px solid rgb(214, 214, 214);
+    z-index: 5;
+    position: relative;
+}
+
+.list tr:hover {
+    background-color: rgb(231, 231, 231);
+    cursor: pointer;
 }

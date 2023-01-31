@@ -1,40 +1,43 @@
 const data = [
     {
         "id": 1,
-        "name": "Violaceae",
-        "quantity": "2",
-        "coment": "Check date",
+        "name": "Spaghetti",
+        "comment": "Regular",
+        "qty": 6,
     },
     {
         "id": 2,
-        "name": "Scrophulariaceae",
-        "quantity": "2",
-        "coment": "Check date",
+        "name": "Avokado",
+        "comment": "Regular",
+        "qty": 2,
     },
     {
         "id": 3,
-        "name": "Fabaceae",
-        "quantity": "2",
-        "coment": "Check date",
+        "name": "Water",
+        "comment": "Mineral",
+        "qty": 3,
     },
-    {
-        "id": 4,
-        "name": "Lamiaceae",
-        "quantity": "2",
-        "coment": "Check date",
-    },
-    {
-        "id": 5,
-        "name": "Asteraceae",
-        "quantity": "2",
-        "coment": "Check date",
-    },
-    {
-        "id": 6,
-        "name": "Ericaceae",
-        "quantity": "2",
-        "coment": "Check date",
-    },
+    // {
+    //     "id": 4,
+    //     "name": "Lamiaceae",
+    //     "quantity": "2",
+    //     "comment": "Check date",
+    //     "qty": 1
+    // },
+    // {
+    //     "id": 5,
+    //     "name": "Asteraceae",
+    //     "quantity": "2",
+    //     "comment": "Check date",
+    //     "qty": 4
+    // },
+    // {
+    //     "id": 6,
+    //     "name": "Ericaceae",
+    //     "quantity": "2",
+    //     "comment": "Check date",
+    //     "qty": 3
+    // },
     // {
     //     "id": 7,
     //     "name": "Onagraceae"
