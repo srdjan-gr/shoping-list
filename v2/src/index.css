@@ -90,6 +90,14 @@ code {
   background-color: var(--bgEditHover);
 }
 
+.bg-success-message {
+  background-color: var(--bgSuccess);
+}
+
+.bg-danger-message {
+  background-color: var(--bgDanger);
+}
+
 .icon-main-danger {
   color: var(--bgDanger);
   font-size: 20px;
@@ -105,6 +113,19 @@ code {
   text-align: center;
   margin-top: 2px;
 }
+
+.icon-xl-white {
+  font-size: 24px;
+  color: var(--textLight);
+  position: absolute;
+  right: 20px;
+}
+
+.icon-xl-white:hover {
+  color: var(--text);
+  cursor: pointer;
+}
+
 
 /* Utility */
 

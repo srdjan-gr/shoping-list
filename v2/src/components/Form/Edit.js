@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { RiCloseLine } from 'react-icons/ri'
 import './Form.css'
 
-const Edit = ({ editItem, setEditItem, recordList, setrecordList }) => {
+const Edit = ({ editItem, setEditItem, recordList, setrecordList, message, setMessage }) => {
 
     const [editName, setEditName] = useState('');
     const [editComment, setEditComment] = useState('');
     const [editQty, setEditQty] = useState('');
+
+    const { action, text, bgClass } = message;
 
     useEffect(() => {
         setEditName(editItem.name);
@@ -28,6 +30,12 @@ const Edit = ({ editItem, setEditItem, recordList, setrecordList }) => {
             }
         });
         setrecordList([...tempData])
+
+        setMessage({
+            action: true,
+            text: 'Item changed successfully!',
+            bgClass: 'success'
+        })
 
         cancelEdit();
     }

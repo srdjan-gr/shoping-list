@@ -2,14 +2,25 @@ import React from 'react'
 import { RiCloseCircleFill, RiEditBoxLine } from 'react-icons/ri'
 import './List.css'
 
-const List = ({ editItem, setEditItem, recordList, setrecordList }) => {
+const List = ({ editItem, setEditItem, recordList, setrecordList, message, setMessage }) => {
 
+    const { action, text, bgClass } = message;
 
-    const deleteItem = (idx) => {
+    const deleteItem = (idx, name) => {
 
-        let tempData = [...recordList];
-        tempData.splice(idx, 1);
-        setrecordList([...tempData]);
+        let confirm = window.confirm('Are you sure you want to delete item?')
+
+        if (confirm) {
+            let tempData = [...recordList];
+            tempData.splice(idx, 1);
+            setrecordList([...tempData]);
+
+            setMessage({
+                action: true,
+                text: `Item '${name}' deleted successfully!`,
+                bgClass: 'success'
+            })
+        }
     }
 
     const editParams = (item) => {
@@ -49,7 +60,7 @@ const List = ({ editItem, setEditItem, recordList, setrecordList }) => {
                                             <td>{item.qty}</td>
                                             <td>
                                                 <RiEditBoxLine className='icon-main-edit' onClick={() => editParams(item)} />
-                                                <RiCloseCircleFill className='icon-main-danger' onClick={() => deleteItem(idx)} />
+                                                <RiCloseCircleFill className='icon-main-danger' onClick={() => deleteItem(idx, item.name)} />
                                             </td>
                                         </tr>
                                     )

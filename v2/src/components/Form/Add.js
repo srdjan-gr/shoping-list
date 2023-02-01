@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import './Form.css'
 
-const Add = ({ recordList, setrecordList }) => {
+const Add = ({ recordList, setrecordList, message, setMessage }) => {
 
     // const [id, setId] = useState('');
     const [name, setName] = useState('');
     const [comment, setComment] = useState('');
     const [qty, setQty] = useState('');
+
+    const { action, text, bgClass } = message;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,13 +26,23 @@ const Add = ({ recordList, setrecordList }) => {
 
             setrecordList([...recordList, newData]);
 
+            setMessage({
+                action: true,
+                text: `Item '${name}' added successfully!!!`,
+                bgClass: 'success'
+            })
+
             e.target.name.value = ''
             e.target.comment.value = ''
             e.target.qty.value = ''
             e.target.name.focus()
 
         } else {
-            console.log('Nisu uneti podaci')
+            setMessage({
+                action: true,
+                text: 'Item Name and Quantity are required!!!',
+                bgClass: 'danger'
+            })
         }
     }
 
